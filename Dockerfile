@@ -12,8 +12,9 @@ RUN apk update && apk upgrade \
   && make \
   && "./h2o" -v \
   && mv "./h2o" /opt/h2o \
+  && mv ".libh2o.a" "/opt/libh2o.a" \
+  && mv ".libh2o-evloop.a" "/opt/libh2o-evloop.a" \
   && mv "./examples" /opt/examples \
-  && rm -rf "/opt/examples/h2o_mruby" "/opt/examples/libh2o" \
   && cd .. && rm -rf "h2o-$H2O_VERSION" \
   && apk del make cmake g++ libuv \
   && apk del openssl-dev \
