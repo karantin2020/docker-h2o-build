@@ -10,10 +10,9 @@ RUN apk update && apk upgrade \
   && cd "/opt/h2o-$H2O_VERSION" \
   && cmake -DWITH_BUNDLED_SSL=off . \
   && make \
-  && "./h2o" -v \
-  && mv "./h2o" /opt/h2o \
-  && mv ".libh2o.a" "/opt/libh2o.a" \
-  && mv ".libh2o-evloop.a" "/opt/libh2o-evloop.a" \
+  && mv "./h2o" "/opt/h2o" \
+  && mv "./libh2o.a" "/opt/libh2o.a" \
+  && mv "./libh2o-evloop.a" "/opt/libh2o-evloop.a" \
   && mv "./examples" /opt/examples \
   && cd .. && rm -rf "h2o-$H2O_VERSION" \
   && apk del make cmake g++ libuv \
