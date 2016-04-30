@@ -16,7 +16,7 @@ RUN apk update && apk upgrade \
   && mv "./examples" /opt/examples \
   && cd .. && rm -rf "h2o-$H2O_VERSION" \
   && apk del make cmake g++ libuv \
-  && apk del openssl-dev libuv-dev \
+  && apk del openssl-dev \
   && apk add openssl \
   && apk add libstdc++ \
   && rm -rf /var/cache/apk/* \
